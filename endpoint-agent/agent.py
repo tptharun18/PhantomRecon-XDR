@@ -1,24 +1,18 @@
 import psutil
 import time
-from datetime import datetime
-
-LOG_FILE = "endpoint_logs.txt"
 
 while True:
-    processes = []
+    with open("endpoint_logs.txt", "a") as log:
+        log.write("\n===== Process Snapshot =====\n")
 
-    for proc in psutil.process_iter(['pid', 'name']):
-        try:
-            processes.append(
-                f"{datetime.now()} | PID:{proc.info['pid']} | {proc.info['name']}"
-            )
-        except:
-            pass
+        for proc in psutil.process_iter(['pid', 'name']):
+            try:
+                log.write(
+                    f"PID: {proc.info['pid']} | "
+                    f"Process: {proc.info['name']}\n"
+                )
+            except:
+                pass
 
-    with open(LOG_FILE, "a") as f:
-        for p in processes:
-            f.write(p + "\n")
-
-    print(f"Collected {len(processes)} processes")
-
-    time.sleep(10)
+    print("Logs collected successfully")
+    time.sleep(30)
