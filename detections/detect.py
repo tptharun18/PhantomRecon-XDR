@@ -1,18 +1,19 @@
-suspicious_processes = [
-    "mimikatz.exe",
+import os
+
+suspicious = [
+    "mimikatz",
     "nc.exe",
-    "ncat.exe",
-    "netcat.exe",
-    "powersploit.exe"
+    "nmap",
+    "metasploit"
 ]
 
-log_file = "../endpoint-agent/endpoint_logs.txt"
+logfile = "../endpoint-agent/endpoint_logs.txt"
 
-with open(log_file, "r", errors="ignore") as f:
-    logs = f.readlines()
+if os.path.exists(logfile):
 
-for line in logs:
-    for proc in suspicious_processes:
-        if proc.lower() in line.lower():
-            print(f"[ALERT] Suspicious Process Detected: {proc}")
-            print(line)
+    with open(logfile, "r", errors="ignore") as f:
+        data = f.read().lower()
+
+    for item in suspicious:
+        if item in data:
+            print(f"[ALERT] Suspicious tool detected: {item}")
