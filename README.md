@@ -1,185 +1,266 @@
+<div align="center">
+
 # PhantomRecon-XDR
 
-> **Real-time Extended Detection & Response (XDR) platform** powered by Wazuh, OpenSearch, and custom ML-based threat detection — with multi-channel alerting and containerized deployment.
+**AI-Powered Extended Detection & Response Platform**
+
+Collect endpoint telemetry · Detect malicious behavior · Enrich with threat intelligence · Respond in real time
+
+<br/>
+
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Wazuh](https://img.shields.io/badge/Wazuh-4.x-0055A5?style=flat-square)](https://wazuh.com)
+[![OpenSearch](https://img.shields.io/badge/OpenSearch-2.x-005EB8?style=flat-square&logo=opensearch&logoColor=white)](https://opensearch.org)
+[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-22C55E?style=flat-square)]()
+
+</div>
 
 ---
 
-## 📐 System Architecture
+## What is PhantomRecon-XDR?
 
-PhantomRecon-XDR is built around a modular pipeline that connects monitored endpoints to a centralized SIEM for real-time detection, correlation, and response.
+PhantomRecon-XDR is a modular, open-source **Extended Detection & Response (XDR)** platform built for blue-team operations, security research, and hands-on learning.
+
+It connects a Python-based endpoint agent to the **Wazuh SIEM**, enriches security events with external **threat intelligence**, and delivers alerts across multiple channels — all deployable via Docker in minutes.
+
+> **Built for:** Security students, researchers, and blue-team practitioners who want a production-grade detection pipeline they can own, extend, and learn from.
+
+---
+
+## Architecture
 
 ```
-Endpoints → Endpoint Agent → Detection Engine → Threat Intelligence → Wazuh Manager
-                                                                          ↓
-                    Alerting Engine ← OpenSearch Cluster ← Wazuh Dashboard
+┌──────────────────────────────────────────────────────────────────┐
+│                      Monitored Endpoints                         │
+│               Windows  ·  Linux  ·  Servers                      │
+└──────────────────────────────┬───────────────────────────────────┘
+                               │  Process Events · File Changes
+                               │  Network Connections · System Logs
+                               ▼
+                    ┌──────────────────────┐
+                    │    Endpoint Agent    │  Python · Secure Transport
+                    │  (Telemetry Layer)   │
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────▼───────────┐
+                    │   Detection Engine   │  Custom Rules
+                    │  (Analysis Layer)    │  Behavioral Signatures
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────▼───────────┐
+                    │ Threat Intelligence  │  AbuseIPDB · MITRE
+                    │  (Enrichment Layer)  │  IP Reputation · Scoring
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────▼───────────┐
+                    │   Wazuh Manager      │  Log Decoding
+                    │     (SIEM Layer)     │  Rule Correlation
+                    └──────┬───────┬───────┘  Active Response
+                           │       │
+             ┌─────────────▼─┐   ┌─▼────────────────────┐
+             │  OpenSearch   │   │    Alerting Engine    │
+             │   Cluster     │   │  Desktop · Email      │
+             │  Index · Store│   │  Telegram             │
+             └───────┬───────┘   └──────────────────────┘
+                     │
+             ┌───────▼───────┐
+             │ Wazuh Dashboard│
+             │ Visualization  │
+             │ Threat Hunting │
+             └───────────────┘
 ```
 
-### Core Components
+---
+
+## Core Components
 
 | Component | Role |
 |---|---|
-| **Python Endpoint Agent** | Collects telemetry, system monitoring, log forwarding, secure communication |
-| **Detection Engine** | Custom rules: Suspicious Processes, Reverse Shell, Port Scan, Brute Force, Malware Behavior |
-| **Threat Intelligence** | AbuseIPDB API — IP reputation lookup, threat enrichment, malicious IP detection, confidence scoring |
-| **Wazuh Manager** | Open-source SIEM — log ingestion, rule correlation, alert generation, active response |
-| **OpenSearch Cluster** | Indexing, search, storage, aggregation |
-| **Wazuh Dashboard** | Visualization, dashboards, threat hunting, reports |
-| **Alerting Engine** | Desktop, Email, and Telegram alerts |
+| **Endpoint Agent** | Collects process events, file changes, network connections, and system logs from Windows and Linux endpoints |
+| **Detection Engine** | Applies custom Python detection modules for reverse shells, port scans, brute force, and malware behavior |
+| **Threat Intelligence** | Enriches suspicious IPs via AbuseIPDB — reputation lookup, confidence scoring, MITRE ATT&CK tagging |
+| **Wazuh Manager** | Decodes logs, runs rule correlation, generates alerts, and triggers active responses |
+| **OpenSearch Cluster** | Indexes and stores all security events for search and analytics |
+| **Wazuh Dashboard** | Provides real-time dashboards, threat hunting, and incident reports |
+| **Alerting Engine** | Delivers multi-channel notifications — Desktop, Email, and Telegram |
 
 ---
 
-## 🔄 Endpoint Monitoring Flow
+## Detection Capabilities
 
-```
-System Activity → Endpoint Agent → Event Normalization → Wazuh Manager
-                                                              ↓
-Alerts & Response ← Detection Engine ←────────────────────────
-```
-
-**System activity monitored:**
-- Process Creation
-- File Modification
-- Registry Changes
-- Network Connections
+| Detection Module | Description |
+|---|---|
+| 🔍 **Reverse Shell Detection** | Identifies outbound shell connections via process and network correlation |
+| 🔎 **Port Scan Detection** | Detects sequential or distributed port scanning patterns |
+| 🔐 **Brute Force Detection** | Flags repeated authentication failures against services |
+| ⚠️ **Suspicious Process Detection** | Monitors for anomalous process trees and unusual parent-child relationships |
+| 🦠 **Malware Behavior Detection** | Matches behavioral indicators including registry modifications and persistence mechanisms |
+| 🌐 **IP Reputation Analysis** | Checks source IPs against AbuseIPDB with configurable confidence thresholds |
+| 📊 **Statistical Anomaly Detection** | Baselines normal behavior and flags deviations *(ML engine — in progress)* |
 
 ---
 
-## 🧠 Detection Engine Workflow
+## Feature Status
 
-1. **Log Ingestion** — Logs from endpoints and servers are received by Wazuh
-2. **Rule Matching** — Logs are matched against custom detection rules
-3. **Correlation & Analysis** — Events are correlated to identify suspicious or malicious activity
-4. **Alert Generation** — If a rule is triggered, an alert is generated
-5. **Response & Notification** — Alert is sent to dashboard and notification channels
-
----
-
-## 🔔 Alerting Pipeline
-
-```
-Alert Triggered (Rule matched / Threat detected)
-        ↓
-Alert Enrichment (IP reputation, GeoIP, Threat Intel, MITRE tags)
-        ↓
-Alert Channels: Desktop | Email | Telegram
-        ↓
-Analyst / User — Receive alerts and take action
-```
+| Feature | Status |
+|---|:---:|
+| Endpoint Monitoring (Windows & Linux) | ✅ |
+| Custom Detection Rules | ✅ |
+| Wazuh SIEM Integration | ✅ |
+| OpenSearch Logging & Indexing | ✅ |
+| Threat Intelligence Enrichment (AbuseIPDB) | ✅ |
+| Desktop Notifications | ✅ |
+| Telegram Alerts | ✅ |
+| Email Alerts | ✅ |
+| Docker Deployment | ✅ |
+| ML-Based Behavioral Detection | 🚧 In Progress |
+| MITRE ATT&CK Mapping | 🚧 In Progress |
+| Sigma Rule Support | 🗓️ Planned |
+| Kubernetes Deployment | 🗓️ Planned |
 
 ---
 
-## 🏗️ Wazuh Integration Architecture
-
-```
-Wazuh Agent (Endpoint) ──┐
-Wazuh Agent (Server)   ──┼──→ Wazuh Manager (Decode → Rule Engine → Correlate → Alert → Respond)
-Other Sources (Syslog) ──┘              ↓                    ↓
-                                 OpenSearch             Wazuh Dashboard
-                              (Storage & Indexing)      (Visualization)
-```
-
----
-
-## 📁 Project Repository Structure
+## Repository Structure
 
 ```
 PhantomRecon-XDR/
-├── endpoint-agent/        # Python endpoint monitoring agent
-├── detections/            # Custom detection rules
-├── alerts/                # Alerting modules (email/telegram/desktop)
-├── ml-engine/             # ML-based anomaly detection
+│
+├── endpoint-agent/          # Python endpoint monitoring agent
+├── detections/              # Custom detection rule modules
+├── alerts/                  # Alerting (email / telegram / desktop)
+├── ml-engine/               # ML-based anomaly detection (WIP)
+│
 ├── docker/
-│   └── wazuh/             # Wazuh single-node setup
+│   └── wazuh/               # Wazuh single-node Docker setup
+│
+├── config/                  # Configuration files
+├── dashboards/              # OpenSearch / Wazuh dashboard exports
+│
 ├── docs/
-│   ├── architecture/      # Architecture diagrams
-│   ├── detection-rules/   # Detection rule documentation
-│   ├── installation/      # Installation guide
-│   └── images/            # Screenshots & diagrams
-├── config/                # Configuration files
-├── dashboards/            # Dashboards & visualizations
-├── logs/                  # Logs (gitignored)
-├── tests/                 # Test scripts
+│   ├── architecture/        # Architecture diagrams
+│   ├── detection-rules/     # Rule documentation
+│   ├── installation/        # Setup and deployment guides
+│   └── images/              # Screenshots and diagrams
+│
+├── logs/                    # Runtime logs (gitignored)
+├── tests/                   # Unit and integration tests
+│
 ├── .gitignore
-├── LICENSE                # MIT License
-├── CONTRIBUTING.md        # Contribution guidelines
-├── CHANGELOG.md           # Changelog
-└── README.md              # Project documentation
+├── LICENSE
+├── CONTRIBUTING.md
+├── CHANGELOG.md
+└── README.md
 ```
 
 ---
 
-## ✨ Key Capabilities
+## Tech Stack
 
-| Capability | Description |
+| Layer | Technology |
 |---|---|
-| 🛡️ Real-time Threat Detection | Continuous monitoring of endpoints with instant rule-based detection |
-| 🔍 Threat Intelligence Enrichment | Automatic IP reputation and MITRE ATT&CK tag enrichment on alerts |
-| 📊 Centralized Logging & Monitoring | All events aggregated in OpenSearch with full-text search |
-| 🔔 Multi-channel Alerting | Desktop, email, and Telegram notifications for analyst response |
-| 🧠 ML-Powered Anomaly Detection | Behavioral baselines and statistical anomaly detection via ml-engine |
-| ⚡ Active Response (Wazuh) | Automated response actions triggered by Wazuh rule matches |
-| 🐳 Containerized Deployment | Docker-based single-node Wazuh setup for easy bootstrapping |
+| Agent & Detection | Python 3.11 |
+| SIEM | Wazuh 4.x |
+| Search & Storage | OpenSearch 2.x |
+| Containerization | Docker & Docker Compose |
+| Threat Intelligence | AbuseIPDB API |
+| Alerting | Telegram Bot API · SMTP · Desktop Notify |
+| Supported OS | Windows · Linux |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
 - Docker & Docker Compose
-- Python 3.8+
-- Node.js (optional, for dashboard customization)
+- Python 3.10+
+- Git
 
-### 1. Clone the Repository
+### 1 · Clone
 
 ```bash
-git clone https://github.com/<your-username>/PhantomRecon-XDR.git
+git clone https://github.com/tptharun18/PhantomRecon-XDR.git
 cd PhantomRecon-XDR
 ```
 
-### 2. Start Wazuh Stack
+### 2 · Start the Wazuh Stack
 
 ```bash
 cd docker/wazuh
-docker-compose up -d
+docker compose up -d
 ```
 
-### 3. Deploy the Endpoint Agent
+Wazuh Manager and OpenSearch will be available at `https://localhost` once healthy (allow ~2 minutes on first run).
+
+### 3 · Configure
+
+Copy and edit the example config:
+
+```bash
+cp config/example.yaml config/config.yaml
+# Set your AbuseIPDB API key, Telegram token, and SMTP credentials
+```
+
+### 4 · Deploy the Endpoint Agent
 
 ```bash
 cd endpoint-agent
 pip install -r requirements.txt
-python agent.py --config ../config/agent.yaml
+python agent.py --config ../config/config.yaml
 ```
 
-### 4. Configure Alerting
+### 5 · Open the Dashboard
 
-Edit `config/alerts.yaml` to set up your Email / Telegram credentials, then:
-
-```bash
-cd alerts
-python alert_manager.py
-```
+Navigate to `https://localhost` in your browser and log in with your Wazuh credentials to see live events and alerts.
 
 ---
 
-## 📖 Documentation
+## Roadmap
 
-- [Architecture Overview](docs/architecture/)
-- [Detection Rules Guide](docs/detection-rules/)
-- [Installation Guide](docs/installation/)
-- [Contributing](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
+- [x] Endpoint Monitoring Agent
+- [x] Custom Detection Rule Engine
+- [x] Wazuh SIEM Integration
+- [x] OpenSearch Integration
+- [x] Threat Intelligence Enrichment
+- [x] Multi-channel Alerting
+- [ ] ML-Based Behavioral Detection
+- [ ] MITRE ATT&CK Mapping
+- [ ] Sigma Rule Compatibility
+- [ ] Interactive Web Dashboard
+- [ ] Kubernetes Deployment
 
 ---
 
-## 📄 License
+## Documentation
 
-This project is licensed under the [MIT License](LICENSE).
+| Guide | Link |
+|---|---|
+| Architecture Overview | [docs/architecture/](docs/architecture/) |
+| Installation Guide | [docs/installation/](docs/installation/) |
+| Detection Rules | [docs/detection-rules/](docs/detection-rules/) |
+| Contributing | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Changelog | [CHANGELOG.md](CHANGELOG.md) |
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Pull requests are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on code style, branch naming, and the PR process.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming conventions, code style guidelines, and the pull request process.
 
+---
+
+## License
+
+Distributed under the **MIT License** — see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+Built by **TP Tharun** — Cybersecurity Student · Security Researcher · Blue Team Enthusiast
+
+*If PhantomRecon-XDR is useful to you, consider giving it a ⭐ on GitHub.*
+
+</div>
