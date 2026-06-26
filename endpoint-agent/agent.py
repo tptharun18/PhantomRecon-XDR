@@ -1,27 +1,30 @@
 import psutil
-import socket
-import getpass
 from datetime import datetime
 
-hostname = socket.gethostname()
-username = getpass.getuser()
+with open("endpoint_logs.txt", "w") as f:
 
-with open("endpoint_logs.txt", "a") as log:
+    f.write(f"Time: {datetime.now()}\n")
 
-    log.write("\n" + "="*50 + "\n")
-    log.write(f"Time: {datetime.now()}\n")
-    log.write(f"Hostname: {hostname}\n")
-    log.write(f"Username: {username}\n")
+    f.write("\n=== Running Processes ===\n")
 
-    log.write("\nRunning Processes:\n")
-
-    for proc in psutil.process_iter(['pid','name']):
+    for process in psutil.process_iter():
         try:
-            log.write(
-                f"PID: {proc.info['pid']} "
-                f"Process: {proc.info['name']}\n"
-            )
+            f.write(process.name() + "\n")
         except:
             pass
 
-print("Logs collected successfully")
+    f.write("\n=== CPU Usage ===\n")
+    f.write(str(psutil.cpu_percent()) + "\n")
+
+    f.write("\n=== Memory Usage ===\n")
+    f.write(str(psutil.virtual_memory().percent) + "\n")
+
+    f.write("\n=== Open Ports ===\n")
+
+    for conn in psutil.net_connections():
+        try:
+            f.write(str(conn.laddr.port) + "\n")
+        except:
+            pass
+
+print("Endpoint logs generated successfully!")

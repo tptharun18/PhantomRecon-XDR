@@ -1,298 +1,416 @@
+Time: 2026-06-22 12:41:07.867816
 
-==================================================
-Time: 2026-06-17 10:46:05.449230
-Hostname: THARUN
-Username: tptha
+=== Running Processes ===
+System Idle Process
+System
+WUDFHost.exe
 
-Running Processes:
-PID: 0 Process: System Idle Process
-PID: 4 Process: System
-PID: 236 Process: 
-PID: 280 Process: Registry
-PID: 828 Process: ShellExperienceHost.exe
-PID: 952 Process: smss.exe
-PID: 1008 Process: svchost.exe
-PID: 1432 Process: csrss.exe
-PID: 1436 Process: WUDFHost.exe
-PID: 1520 Process: wininit.exe
-PID: 1528 Process: csrss.exe
-PID: 1608 Process: winlogon.exe
-PID: 1664 Process: services.exe
-PID: 1676 Process: LsaIso.exe
-PID: 1696 Process: lsass.exe
-PID: 1756 Process: dwm.exe
-PID: 1808 Process: fontdrvhost.exe
-PID: 1816 Process: fontdrvhost.exe
-PID: 1884 Process: svchost.exe
-PID: 1960 Process: svchost.exe
-PID: 1964 Process: WUDFHost.exe
-PID: 2012 Process: svchost.exe
-PID: 2120 Process: svchost.exe
-PID: 2144 Process: svchost.exe
-PID: 2164 Process: svchost.exe
-PID: 2176 Process: svchost.exe
-PID: 2188 Process: svchost.exe
-PID: 2216 Process: svchost.exe
-PID: 2228 Process: svchost.exe
-PID: 2244 Process: svchost.exe
-PID: 2308 Process: svchost.exe
-PID: 2444 Process: svchost.exe
-PID: 2484 Process: svchost.exe
-PID: 2496 Process: WUDFHost.exe
-PID: 2520 Process: svchost.exe
-PID: 2552 Process: svchost.exe
-PID: 2560 Process: svchost.exe
-PID: 2572 Process: svchost.exe
-PID: 2628 Process: svchost.exe
-PID: 2816 Process: IntelCpHDCPSvc.exe
-PID: 2832 Process: svchost.exe
-PID: 2840 Process: svchost.exe
-PID: 2928 Process: svchost.exe
-PID: 2976 Process: svchost.exe
-PID: 3016 Process: svchost.exe
-PID: 3036 Process: svchost.exe
-PID: 3060 Process: sihost.exe
-PID: 3080 Process: ipf_helper.exe
-PID: 3088 Process: svchost.exe
-PID: 3332 Process: msrdc.exe
-PID: 3368 Process: svchost.exe
-PID: 3380 Process: svchost.exe
-PID: 3484 Process: svchost.exe
-PID: 3548 Process: CrossDeviceResume.exe
-PID: 3656 Process: svchost.exe
-PID: 3664 Process: svchost.exe
-PID: 3736 Process: svchost.exe
-PID: 3800 Process: taskhostw.exe
-PID: 3844 Process: WUDFHost.exe
-PID: 3852 Process: svchost.exe
-PID: 3932 Process: svchost.exe
-PID: 4004 Process: SynTPEnhService.exe
-PID: 4084 Process: wslhost.exe
-PID: 4100 Process: svchost.exe
-PID: 4220 Process: MemCompression
-PID: 4296 Process: svchost.exe
-PID: 4300 Process: svchost.exe
-PID: 4324 Process: WUDFHost.exe
-PID: 4364 Process: svchost.exe
-PID: 4428 Process: svchost.exe
-PID: 4440 Process: AppHelperCap.exe
-PID: 4448 Process: NetworkCap.exe
-PID: 4456 Process: TouchpointAnalyticsClientService.exe
-PID: 4464 Process: DiagsCap.exe
-PID: 4472 Process: SysInfoCap.exe
-PID: 4484 Process: svchost.exe
-PID: 4504 Process: GameInputRedistService.exe
-PID: 4540 Process: svchost.exe
-PID: 4560 Process: SecurityHealthService.exe
-PID: 4612 Process: dllhost.exe
-PID: 4688 Process: svchost.exe
-PID: 4704 Process: backgroundTaskHost.exe
-PID: 4816 Process: svchost.exe
-PID: 4828 Process: svchost.exe
-PID: 4972 Process: svchost.exe
-PID: 5004 Process: backgroundTaskHost.exe
-PID: 5112 Process: svchost.exe
-PID: 5124 Process: svchost.exe
-PID: 5164 Process: ctfmon.exe
-PID: 5320 Process: unsecapp.exe
-PID: 5332 Process: svchost.exe
-PID: 5348 Process: svchost.exe
-PID: 5376 Process: pet.exe
-PID: 5464 Process: WmiPrvSE.exe
-PID: 5528 Process: msedge.exe
-PID: 5576 Process: svchost.exe
-PID: 5592 Process: svchost.exe
-PID: 5636 Process: BridgeCommunication.exe
-PID: 5672 Process: svchost.exe
-PID: 5684 Process: svchost.exe
-PID: 5696 Process: NgcIso.exe
-PID: 5736 Process: HPCommRecovery.exe
-PID: 5744 Process: LockApp.exe
-PID: 5752 Process: svchost.exe
-PID: 5756 Process: spoolsv.exe
-PID: 5800 Process: svchost.exe
-PID: 5860 Process: jhi_service.exe
-PID: 5876 Process: svchost.exe
-PID: 5912 Process: svchost.exe
-PID: 5976 Process: dasHost.exe
-PID: 5984 Process: svchost.exe
-PID: 6064 Process: svchost.exe
-PID: 6080 Process: svchost.exe
-PID: 6096 Process: svchost.exe
-PID: 6104 Process: svchost.exe
-PID: 6112 Process: ELAN_MOC_Service.exe
-PID: 6120 Process: OneApp.IGCC.WinService.exe
-PID: 6128 Process: HPPrintScanDoctorService.exe
-PID: 6136 Process: IntelAudioService.exe
-PID: 6152 Process: GameInputRedistService.exe
-PID: 6160 Process: MpDefenderCoreService.exe
-PID: 6168 Process: ipf_uf.exe
-PID: 6184 Process: OfficeClickToRun.exe
-PID: 6212 Process: ipfsvc.exe
-PID: 6220 Process: svchost.exe
-PID: 6260 Process: svchost.exe
-PID: 6276 Process: backgroundTaskHost.exe
-PID: 6328 Process: RtkAudUService64.exe
-PID: 6352 Process: svchost.exe
-PID: 6364 Process: BridgeCommunication.exe
-PID: 6396 Process: svchost.exe
-PID: 6420 Process: svchost.exe
-PID: 6436 Process: vmware-authd.exe
-PID: 6456 Process: vmnetdhcp.exe
-PID: 6496 Process: vmware-usbarbitrator64.exe
-PID: 6540 Process: WMIRegistrationService.exe
-PID: 6548 Process: MsMpEng.exe
-PID: 6596 Process: vmnat.exe
-PID: 6620 Process: PhoneExperienceHost.exe
-PID: 6668 Process: wslservice.exe
-PID: 6688 Process: svchost.exe
-PID: 6700 Process: svchost.exe
-PID: 6708 Process: XtuService.exe
-PID: 6744 Process: wslhost.exe
-PID: 6780 Process: msedgewebview2.exe
-PID: 6824 Process: conhost.exe
-PID: 6872 Process: svchost.exe
-PID: 6896 Process: svchost.exe
-PID: 6920 Process: svchost.exe
-PID: 6960 Process: svchost.exe
-PID: 6976 Process: svchost.exe
-PID: 7468 Process: Code.exe
-PID: 7492 Process: AggregatorHost.exe
-PID: 7624 Process: vmwp.exe
-PID: 7628 Process: conhost.exe
-PID: 7656 Process: servicehost.exe
-PID: 7780 Process: docker-sandbox.exe
-PID: 8160 Process: Code.exe
-PID: 8204 Process: svchost.exe
-PID: 8416 Process: svchost.exe
-PID: 8540 Process: RtkAudUService64.exe
-PID: 8600 Process: svchost.exe
-PID: 9032 Process: wlanext.exe
-PID: 9116 Process: Code.exe
-PID: 9168 Process: SearchIndexer.exe
-PID: 9416 Process: svchost.exe
-PID: 9464 Process: explorer.exe
-PID: 9528 Process: uihost.exe
-PID: 9688 Process: svchost.exe
-PID: 9696 Process: NisSrv.exe
-PID: 10028 Process: svchost.exe
-PID: 10048 Process: Code.exe
-PID: 10112 Process: BridgeCommunication.exe
-PID: 10128 Process: AppActions.exe
-PID: 10248 Process: SynTPEnh.exe
-PID: 10372 Process: BridgeCommunication.exe
-PID: 10392 Process: wsl.exe
-PID: 10420 Process: OpenConsole.exe
-PID: 10532 Process: backgroundTaskHost.exe
-PID: 10720 Process: HPEnhancedLighting.Bg.exe
-PID: 10728 Process: wslrelay.exe
-PID: 10776 Process: RuntimeBroker.exe
-PID: 10924 Process: SearchHost.exe
-PID: 10956 Process: StartMenuExperienceHost.exe
-PID: 11024 Process: taskhostw.exe
-PID: 11144 Process: SDXHelper.exe
-PID: 11200 Process: svchost.exe
-PID: 11208 Process: HPMediaNetwork.exe
-PID: 11224 Process: RuntimeBroker.exe
-PID: 11288 Process: UserOOBEBroker.exe
-PID: 11528 Process: TextInputHost.exe
-PID: 11896 Process: vmcompute.exe
-PID: 12020 Process: jusched.exe
-PID: 12072 Process: dllhost.exe
-PID: 12196 Process: CodeSetup-stable-6928394f91b684055b873eecb8bc281365131f1c.exe
-PID: 12252 Process: msedgewebview2.exe
-PID: 12388 Process: msedgewebview2.exe
-PID: 12524 Process: com.docker.backend.exe
-PID: 12664 Process: Code.exe
-PID: 12712 Process: RuntimeBroker.exe
-PID: 12828 Process: msedgewebview2.exe
-PID: 12940 Process: SnippingTool.exe
-PID: 12988 Process: msedgewebview2.exe
-PID: 13096 Process: msedgewebview2.exe
-PID: 13132 Process: msedgewebview2.exe
-PID: 13196 Process: msedgewebview2.exe
-PID: 13328 Process: RuntimeBroker.exe
-PID: 13700 Process: Widgets.exe
-PID: 13752 Process: Code.exe
-PID: 13796 Process: msedge.exe
-PID: 13904 Process: Docker Desktop.exe
-PID: 13952 Process: WidgetService.exe
-PID: 14176 Process: Docker Desktop.exe
-PID: 14200 Process: dllhost.exe
-PID: 14204 Process: msedgewebview2.exe
-PID: 14264 Process: backgroundTaskHost.exe
-PID: 14272 Process: conhost.exe
-PID: 14600 Process: svchost.exe
-PID: 14720 Process: RuntimeBroker.exe
-PID: 14892 Process: Code.exe
-PID: 14900 Process: Code.exe
-PID: 14940 Process: com.docker.backend.exe
-PID: 15408 Process: svchost.exe
-PID: 15484 Process: Docker Desktop.exe
-PID: 15536 Process: ApplicationFrameHost.exe
-PID: 15592 Process: dllhost.exe
-PID: 15636 Process: ai.exe
-PID: 15672 Process: com.docker.build.exe
-PID: 15692 Process: chrome.exe
-PID: 15712 Process: Code.exe
-PID: 15752 Process: FileCoAuth.exe
-PID: 16020 Process: HPCC.Bg.BackgroundApp.exe
-PID: 16136 Process: SecurityHealthSystray.exe
-PID: 16144 Process: conhost.exe
-PID: 16180 Process: docker-agent.exe
-PID: 16272 Process: svchost.exe
-PID: 16356 Process: RtkAudUService64.exe
-PID: 16364 Process: dasHost.exe
-PID: 16372 Process: svchost.exe
-PID: 16496 Process: HpSystemManagement.exe
-PID: 16672 Process: unsecapp.exe
-PID: 16772 Process: conhost.exe
-PID: 16816 Process: vmmemWSL
-PID: 16832 Process: Docker Desktop.exe
-PID: 16840 Process: svchost.exe
-PID: 16920 Process: msedgewebview2.exe
-PID: 16924 Process: jucheck.exe
-PID: 16992 Process: msedgewebview2.exe
-PID: 17000 Process: msedgewebview2.exe
-PID: 17148 Process: msedge.exe
-PID: 17156 Process: wslhost.exe
-PID: 17164 Process: svchost.exe
-PID: 17204 Process: chrome.exe
-PID: 17348 Process: HPSystemEventUtilityBackground.exe
-PID: 17412 Process: WINWORD.EXE
-PID: 17516 Process: powershell.exe
-PID: 17544 Process: SearchFilterHost.exe
-PID: 18336 Process: TiWorker.exe
-PID: 18604 Process: conhost.exe
-PID: 18984 Process: TrustedInstaller.exe
-PID: 19064 Process: SystemSettingsAdminFlows.exe
-PID: 19080 Process: msedge.exe
-PID: 19144 Process: audiodg.exe
-PID: 19220 Process: backgroundTaskHost.exe
-PID: 19224 Process: DismHost.exe
-PID: 19244 Process: conhost.exe
-PID: 19336 Process: CodeSetup-stable-6928394f91b684055b873eecb8bc281365131f1c.tmp
-PID: 19396 Process: wsl.exe
-PID: 20388 Process: python.exe
-PID: 20484 Process: msedge.exe
-PID: 20796 Process: dllhost.exe
-PID: 21060 Process: HPSystemEventUtilityHost.exe
-PID: 21500 Process: SystemSettings.exe
-PID: 21536 Process: SearchFilterHost.exe
-PID: 21632 Process: msedge.exe
-PID: 21740 Process: pet.exe
-PID: 21784 Process: powershell.exe
-PID: 21808 Process: Code.exe
-PID: 21844 Process: SearchProtocolHost.exe
-PID: 22256 Process: msedge.exe
-PID: 22284 Process: powershell.exe
-PID: 23024 Process: chrome.exe
-PID: 23052 Process: chrome.exe
-PID: 23328 Process: msedge.exe
-PID: 23340 Process: chrome.exe
-PID: 23416 Process: chrome.exe
-PID: 23548 Process: chrome.exe
-PID: 23664 Process: ShellHost.exe
-PID: 23768 Process: chrome.exe
-PID: 23828 Process: msedge.exe
-PID: 24548 Process: OpenConsole.exe
+Registry
+conhost.exe
+smss.exe
+svchost.exe
+svchost.exe
+wlanext.exe
+csrss.exe
+wininit.exe
+csrss.exe
+winlogon.exe
+backgroundTaskHost.exe
+services.exe
+LsaIso.exe
+AggregatorHost.exe
+lsass.exe
+dwm.exe
+fontdrvhost.exe
+fontdrvhost.exe
+svchost.exe
+WUDFHost.exe
+svchost.exe
+svchost.exe
+WUDFHost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+IntelCpHDCPSvc.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+servicehost.exe
+svchost.exe
+HPEnhancedLighting.Bg.exe
+svchost.exe
+svchost.exe
+svchost.exe
+WUDFHost.exe
+svchost.exe
+backgroundTaskHost.exe
+docker.exe
+ipf_helper.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+sihost.exe
+SynTPEnhService.exe
+svchost.exe
+WUDFHost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+ShellHost.exe
+svchost.exe
+MemCompression
+Code.exe
+svchost.exe
+svchost.exe
+DiagsCap.exe
+svchost.exe
+AppHelperCap.exe
+svchost.exe
+NetworkCap.exe
+SysInfoCap.exe
+TouchpointAnalyticsClientService.exe
+explorer.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+dllhost.exe
+GameInputRedistService.exe
+svchost.exe
+unsecapp.exe
+svchost.exe
+jusched.exe
+svchost.exe
+svchost.exe
+svchost.exe
+WmiPrvSE.exe
+NgcIso.exe
+spoolsv.exe
+svchost.exe
+svchost.exe
+svchost.exe
+GameInputRedistService.exe
+ELAN_MOC_Service.exe
+IntelAudioService.exe
+ipfsvc.exe
+OneApp.IGCC.WinService.exe
+jhi_service.exe
+ipf_uf.exe
+HPPrintScanDoctorService.exe
+OfficeClickToRun.exe
+svchost.exe
+svchost.exe
+svchost.exe
+vmware-authd.exe
+vmnetdhcp.exe
+SafeExamBrowser.Service.exe
+svchost.exe
+vmware-usbarbitrator64.exe
+HPCommRecovery.exe
+svchost.exe
+WMIRegistrationService.exe
+RtkAudUService64.exe
+vmnat.exe
+MsMpEng.exe
+svchost.exe
+wslservice.exe
+XtuService.exe
+CodeSetup-stable-fcf604774b9f2674b473065736ee75077e256353.exe
+svchost.exe
+conhost.exe
+docker.exe
+svchost.exe
+SearchFilterHost.exe
+msedgewebview2.exe
+Code.exe
+docker.exe
+pet.exe
+svchost.exe
+WmiPrvSE.exe
+msedgewebview2.exe
+FileCoAuth.exe
+conhost.exe
+Code.exe
+Code.exe
+svchost.exe
+SecurityHealthService.exe
+svchost.exe
+backgroundTaskHost.exe
+RtkAudUService64.exe
+uihost.exe
+svchost.exe
+BridgeCommunication.exe
+unsecapp.exe
+taskhostw.exe
+Code.exe
+MpDefenderCoreService.exe
+SearchIndexer.exe
+NisSrv.exe
+svchost.exe
+svchost.exe
+CrossDeviceResume.exe
+svchost.exe
+Code.exe
+python.exe
+com.docker.backend.exe
+svchost.exe
+msedgewebview2.exe
+TextInputHost.exe
+RuntimeBroker.exe
+docker-sandbox.exe
+Widgets.exe
+Docker Desktop.exe
+SearchHost.exe
+StartMenuExperienceHost.exe
+dllhost.exe
+svchost.exe
+UserOOBEBroker.exe
+Docker Desktop.exe
+svchost.exe
+CodeSetup-stable-fcf604774b9f2674b473065736ee75077e256353.tmp
+WidgetService.exe
+pet.exe
+dllhost.exe
+ApplicationFrameHost.exe
+WmiPrvSE.exe
+HPSystemEventUtilityBackground.exe
+msedgewebview2.exe
+com.docker.build.exe
+OpenConsole.exe
+Code.exe
+SynTPEnh.exe
+msedgewebview2.exe
+msedgewebview2.exe
+msedgewebview2.exe
+OpenConsole.exe
+msedgewebview2.exe
+svchost.exe
+taskhostw.exe
+svchost.exe
+TrustedInstaller.exe
+com.docker.backend.exe
+chrome.exe
+msedgewebview2.exe
+conhost.exe
+chrome.exe
+Docker Desktop.exe
+HPMediaNetwork.exe
+chrome.exe
+chrome.exe
+ctfmon.exe
+svchost.exe
+PhoneExperienceHost.exe
+SearchProtocolHost.exe
+wsl.exe
+wsl.exe
+Docker Desktop.exe
+AppActions.exe
+vmcompute.exe
+chrome.exe
+vmwp.exe
+vmmemWSL
+Code.exe
+HPCC.Bg.BackgroundApp.exe
+docker-agent.exe
+wsl.exe
+wsl.exe
+svchost.exe
+conhost.exe
+dllhost.exe
+msrdc.exe
+chrome.exe
+chrome.exe
+Code.exe
+chrome.exe
+chrome.exe
+SearchFilterHost.exe
+powershell.exe
+RuntimeBroker.exe
+SystemSettings.exe
+Docker Desktop.exe
+audiodg.exe
+msedgewebview2.exe
+HpSystemManagement.exe
+dllhost.exe
+wslrelay.exe
+SDXHelper.exe
+wslhost.exe
+wslhost.exe
+conhost.exe
+wslhost.exe
+wslhost.exe
+conhost.exe
+msedgewebview2.exe
+conhost.exe
+conhost.exe
+SecurityHealthSystray.exe
+RtkAudUService64.exe
+dllhost.exe
+svchost.exe
+chrome.exe
+powershell.exe
+HPSystemEventUtilityHost.exe
+svchost.exe
+chrome.exe
+ShellExperienceHost.exe
+conhost.exe
+RuntimeBroker.exe
+svchost.exe
+RuntimeBroker.exe
+svchost.exe
+msedgewebview2.exe
+Code.exe
+SnippingTool.exe
+dasHost.exe
+RuntimeBroker.exe
+svchost.exe
+dasHost.exe
+
+=== CPU Usage ===
+27.3
+
+=== Memory Usage ===
+80.3
+
+=== Open Ports ===
+49702
+49665
+5353
+5353
+138
+61573
+9200
+49669
+1515
+55000
+49704
+49815
+50777
+49671
+49704
+49679
+57910
+5355
+55000
+1900
+61002
+5353
+514
+137
+902
+49703
+443
+53552
+137
+49678
+53506
+1900
+49664
+49664
+139
+1900
+1900
+57045
+138
+1514
+49677
+52042
+53553
+49682
+49682
+49666
+9200
+58497
+49670
+135
+5040
+49699
+57170
+5355
+912
+51573
+51574
+49701
+9200
+49669
+137
+5353
+1900
+5353
+5050
+443
+1514
+137
+1900
+61158
+49698
+49681
+139
+49685
+53555
+53
+1900
+57170
+445
+49409
+49665
+1900
+61158
+63121
+49683
+49665
+1900
+57923
+61224
+50777
+53549
+53547
+138
+55000
+49670
+49680
+1515
+49684
+49676
+53550
+51572
+1900
+138
+49682
+514
+49666
+49700
+1515
+135
+445
+63295
+443
+5353
+139
+139
+1514
+59931
